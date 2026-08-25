@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -7,10 +5,9 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   overflow-x: hidden;
 }
-
 
 /* =====================================================
    MAIN PAGE
@@ -46,9 +43,8 @@ body {
     );
 }
 
-
 /* =====================================================
-   CARD
+   MAIN CARD
 ===================================================== */
 
 .card {
@@ -64,13 +60,13 @@ body {
 
   border-radius: 40px;
 
-  background: rgba(255,255,255,0.90);
+  background: rgba(255, 255, 255, 0.92);
 
-  border: 2px solid rgba(235,110,145,0.25);
+  border: 2px solid rgba(235, 110, 145, 0.25);
 
   box-shadow:
-    0 40px 100px rgba(180,70,110,0.18),
-    0 10px 30px rgba(0,0,0,0.08);
+    0 40px 100px rgba(180, 70, 110, 0.18),
+    0 10px 30px rgba(0, 0, 0, 0.08);
 
   backdrop-filter: blur(15px);
 
@@ -78,19 +74,16 @@ body {
 }
 
 @keyframes cardEntry {
-
   from {
     opacity: 0;
-    transform: translateY(60px) scale(.9);
+    transform: translateY(60px) scale(0.9);
   }
 
   to {
     opacity: 1;
     transform: translateY(0) scale(1);
   }
-
 }
-
 
 /* =====================================================
    TITLE
@@ -98,23 +91,20 @@ body {
 
 .top-flowers {
   font-size: 28px;
-
   letter-spacing: 12px;
 
-  animation:
-    flowerDance 3s infinite ease-in-out;
+  animation: flowerDance 3s infinite ease-in-out;
 }
 
 @keyframes flowerDance {
-
-  0%,100% {
+  0%,
+  100% {
     transform: translateY(0);
   }
 
   50% {
     transform: translateY(-8px);
   }
-
 }
 
 .small-heading {
@@ -132,11 +122,11 @@ body {
 h1 {
   margin-top: 8px;
 
-  font-family: 'Dancing Script', cursive;
+  font-family: "Trebuchet MS", Arial, sans-serif;
 
-  font-size: clamp(55px,8vw,90px);
+  font-size: clamp(50px, 8vw, 85px);
 
-  line-height: .95;
+  line-height: 0.95;
 
   color: #7d2948;
 }
@@ -150,17 +140,16 @@ h1 span {
 }
 
 @keyframes titleGlow {
-
-  0%,100% {
-    text-shadow:
-      0 0 0 rgba(230,70,110,0);
+  0%,
+  100% {
+    text-shadow: 0 0 0 rgba(230, 70, 110, 0);
   }
 
   50% {
     text-shadow:
-      0 0 25px rgba(230,70,110,.35);
+      0 0 10px rgba(230, 70, 110, 0.3),
+      0 0 25px rgba(230, 70, 110, 0.2);
   }
-
 }
 
 .subtitle {
@@ -171,13 +160,11 @@ h1 span {
   font-size: 14px;
 }
 
-
 /* =====================================================
-   CHARACTERS
+   CHARACTERS AREA
 ===================================================== */
 
 .characters {
-
   height: 340px;
 
   margin-top: 35px;
@@ -193,48 +180,44 @@ h1 span {
   position: relative;
 }
 
-
-/* Character */
+/* =====================================================
+   CHARACTER
+===================================================== */
 
 .character {
-
   width: 160px;
-
   height: 310px;
 
   position: relative;
 
-  animation:
-    characterFloat 3s ease-in-out infinite;
+  animation: characterFloat 3s ease-in-out infinite;
+
+  transition: transform 0.8s ease;
 }
 
 .sister {
-  animation-delay: .5s;
+  animation-delay: 0.5s;
 }
 
 @keyframes characterFloat {
-
-  0%,100% {
+  0%,
+  100% {
     transform: translateY(0);
   }
 
   50% {
     transform: translateY(-10px);
   }
-
 }
-
 
 /* =====================================================
    NAME TAG
 ===================================================== */
 
 .name-tag {
-
   position: absolute;
 
   top: -10px;
-
   left: 50%;
 
   transform: translateX(-50%);
@@ -254,18 +237,16 @@ h1 span {
   font-weight: 600;
 
   box-shadow:
-    0 5px 15px rgba(0,0,0,.08);
+    0 5px 15px rgba(0, 0, 0, 0.08);
 
   z-index: 10;
 }
-
 
 /* =====================================================
    HEAD
 ===================================================== */
 
 .head {
-
   width: 105px;
   height: 105px;
 
@@ -276,24 +257,21 @@ h1 span {
 
   border-radius: 48%;
 
-  background:
-    #ffd1ae;
+  background: #ffd1ae;
 
   border: 3px solid #f2aa83;
 
   z-index: 3;
 
   box-shadow:
-    0 8px 15px rgba(120,60,30,.12);
+    0 8px 15px rgba(120, 60, 30, 0.12);
 }
-
 
 /* =====================================================
    BROTHER HAIR
 ===================================================== */
 
 .hair {
-
   position: absolute;
 
   width: 105px;
@@ -308,13 +286,9 @@ h1 span {
     60% 60% 35% 35%;
 }
 
-
-/* Hair spikes */
-
 .hair::before,
 .hair::after {
-
-  content: '';
+  content: "";
 
   position: absolute;
 
@@ -336,13 +310,11 @@ h1 span {
   right: 10px;
 }
 
-
 /* =====================================================
    SISTER HAIR
 ===================================================== */
 
 .sister-hair {
-
   position: absolute;
 
   width: 125px;
@@ -360,8 +332,7 @@ h1 span {
 }
 
 .sister-hair::after {
-
-  content: '';
+  content: "";
 
   position: absolute;
 
@@ -376,13 +347,11 @@ h1 span {
   border-radius: 50%;
 }
 
-
 /* =====================================================
    EARS
 ===================================================== */
 
 .ear {
-
   width: 17px;
   height: 25px;
 
@@ -405,13 +374,11 @@ h1 span {
   right: -13px;
 }
 
-
 /* =====================================================
    EYES
 ===================================================== */
 
 .eye {
-
   width: 12px;
   height: 16px;
 
@@ -423,8 +390,7 @@ h1 span {
 
   border-radius: 50%;
 
-  animation:
-    blink 4s infinite;
+  animation: blink 4s infinite;
 }
 
 .left-eye {
@@ -436,24 +402,23 @@ h1 span {
 }
 
 @keyframes blink {
-
-  0%,45%,50%,100% {
+  0%,
+  45%,
+  50%,
+  100% {
     transform: scaleY(1);
   }
 
   47% {
-    transform: scaleY(.1);
+    transform: scaleY(0.1);
   }
-
 }
-
 
 /* =====================================================
    NOSE
 ===================================================== */
 
 .nose {
-
   width: 8px;
   height: 8px;
 
@@ -467,13 +432,11 @@ h1 span {
   transform: rotate(30deg);
 }
 
-
 /* =====================================================
    SMILE
 ===================================================== */
 
 .smile {
-
   width: 30px;
   height: 15px;
 
@@ -487,13 +450,11 @@ h1 span {
   border-radius: 50%;
 }
 
-
 /* =====================================================
    CHEEKS
 ===================================================== */
 
 .cheek {
-
   width: 13px;
   height: 8px;
 
@@ -501,7 +462,7 @@ h1 span {
 
   top: 70px;
 
-  background: rgba(245,100,120,.3);
+  background: rgba(245, 100, 120, 0.3);
 
   border-radius: 50%;
 }
@@ -514,13 +475,11 @@ h1 span {
   right: 13px;
 }
 
-
 /* =====================================================
    BODY
 ===================================================== */
 
 .body {
-
   position: absolute;
 
   top: 135px;
@@ -536,25 +495,20 @@ h1 span {
   z-index: 2;
 }
 
-
 /* Brother shirt */
 
 .brother-body {
-
   background:
     linear-gradient(
       135deg,
       #4b9be8,
       #2468bd
     );
-
 }
-
 
 /* Sister dress */
 
 .sister-body {
-
   width: 110px;
 
   left: 25px;
@@ -570,32 +524,27 @@ h1 span {
     40px 40px 20px 20px;
 }
 
-
 /* =====================================================
    SHIRT / DRESS
 ===================================================== */
 
 .shirt {
-
   padding-top: 30px;
 
   font-size: 22px;
 }
 
 .dress {
-
   padding-top: 30px;
 
   font-size: 25px;
 }
-
 
 /* =====================================================
    ARMS
 ===================================================== */
 
 .arm {
-
   width: 22px;
   height: 85px;
 
@@ -609,42 +558,43 @@ h1 span {
 
   transform-origin: top center;
 
-  transition: .5s;
+  transition:
+    transform 0.8s ease;
 }
-
 
 /* Brother */
 
 .brother-arm-left {
   left: -18px;
+
   transform: rotate(15deg);
 }
 
 .brother-arm-right {
   right: -18px;
+
   transform: rotate(-15deg);
 }
-
 
 /* Sister */
 
 .sister-arm-left {
   left: -18px;
+
   transform: rotate(15deg);
 }
 
 .sister-arm-right {
   right: -18px;
+
   transform: rotate(-15deg);
 }
-
 
 /* =====================================================
    LEGS
 ===================================================== */
 
 .legs {
-
   position: absolute;
 
   bottom: 0;
@@ -657,7 +607,6 @@ h1 span {
 }
 
 .leg {
-
   width: 25px;
   height: 65px;
 
@@ -666,13 +615,11 @@ h1 span {
   border-radius: 20px;
 }
 
-
 /* =====================================================
    RAKHI
 ===================================================== */
 
 .rakhi-zone {
-
   width: 150px;
   height: 180px;
 
@@ -683,10 +630,13 @@ h1 span {
   align-items: center;
 
   justify-content: center;
+
+  transition:
+    transform 0.8s ease,
+    opacity 0.8s ease;
 }
 
 .rakhi {
-
   width: 90px;
   height: 90px;
 
@@ -699,7 +649,6 @@ h1 span {
 }
 
 .rakhi-ring {
-
   width: 90px;
   height: 90px;
 
@@ -721,17 +670,17 @@ h1 span {
     );
 
   box-shadow:
-    0 10px 25px rgba(210,60,100,.35);
+    0 10px 25px rgba(210, 60, 100, 0.35);
 }
 
 .rakhi-center {
-
   width: 50px;
   height: 50px;
 
   display: flex;
 
   align-items: center;
+
   justify-content: center;
 
   border-radius: 50%;
@@ -744,8 +693,8 @@ h1 span {
 }
 
 @keyframes rakhiSpin {
-
-  0%,80% {
+  0%,
+  80% {
     transform: rotate(0);
   }
 
@@ -756,14 +705,11 @@ h1 span {
   100% {
     transform: rotate(0);
   }
-
 }
-
 
 /* Rakhi dots */
 
 .rakhi-dot {
-
   width: 12px;
   height: 12px;
 
@@ -794,17 +740,14 @@ h1 span {
   top: 40px;
 }
 
-
 /* =====================================================
    THREAD
 ===================================================== */
 
 .thread-animation {
-
   position: absolute;
 
   width: 160px;
-
   height: 7px;
 
   background:
@@ -821,24 +764,21 @@ h1 span {
 }
 
 @keyframes threadMove {
-
-  0%,100% {
-    transform: scaleX(.85);
+  0%,
+  100% {
+    transform: scaleX(0.85);
   }
 
   50% {
     transform: scaleX(1.15);
   }
-
 }
-
 
 /* =====================================================
    TINY HEART
 ===================================================== */
 
 .tiny-heart {
-
   position: absolute;
 
   top: 10px;
@@ -850,72 +790,67 @@ h1 span {
 }
 
 @keyframes tinyHeart {
-
-  0%,100% {
-    transform: translateY(0) scale(1);
+  0%,
+  100% {
+    transform:
+      translateY(0)
+      scale(1);
   }
 
   50% {
-    transform: translateY(-12px) scale(1.3);
+    transform:
+      translateY(-12px)
+      scale(1.3);
   }
-
 }
-
 
 /* =====================================================
    HUG ANIMATION
 ===================================================== */
 
 .characters.hug .brother-arm-right {
-
   transform:
     rotate(-65deg)
     translateY(5px);
 }
 
 .characters.hug .sister-arm-left {
-
   transform:
     rotate(65deg)
     translateY(5px);
 }
 
 .characters.hug .brother {
-
   transform:
     translateX(25px)
     translateY(-5px);
 }
 
 .characters.hug .sister {
-
   transform:
     translateX(-25px)
     translateY(-5px);
 }
 
 .characters.hug .rakhi-zone {
-
   animation:
     disappearRakhi 1s forwards;
 }
 
 @keyframes disappearRakhi {
-
   to {
-    opacity: .3;
-    transform: scale(.5);
+    opacity: 0.3;
+
+    transform:
+      scale(0.5);
   }
-
 }
-
 
 /* =====================================================
    MESSAGE
 ===================================================== */
 
 .message-box {
-
   max-width: 620px;
 
   margin: 15px auto 0;
@@ -937,7 +872,6 @@ h1 span {
 }
 
 .message-box p {
-
   color: #666;
 
   line-height: 1.8;
@@ -946,15 +880,12 @@ h1 span {
 }
 
 .quote {
-
   position: absolute;
 
   top: 0;
   left: 15px;
 
-  font-family:
-    Georgia,
-    serif;
+  font-family: Georgia, serif;
 
   font-size: 55px;
 
@@ -962,7 +893,6 @@ h1 span {
 }
 
 .quote.end {
-
   left: auto;
 
   right: 15px;
@@ -972,13 +902,11 @@ h1 span {
   bottom: -25px;
 }
 
-
 /* =====================================================
-   BUTTON
+   SURPRISE BUTTON
 ===================================================== */
 
 .surprise-button {
-
   margin-top: 25px;
 
   padding: 16px 30px;
@@ -996,7 +924,7 @@ h1 span {
       #c52e5e
     );
 
-  font-family: 'Poppins';
+  font-family: Arial, Helvetica, sans-serif;
 
   font-size: 14px;
 
@@ -1005,43 +933,42 @@ h1 span {
   cursor: pointer;
 
   box-shadow:
-    0 10px 25px rgba(200,50,90,.3);
+    0 10px 25px rgba(200, 50, 90, 0.3);
 
-  transition: .3s;
+  transition: 0.3s;
 
   animation:
     buttonPulse 2s infinite;
 }
 
 .surprise-button:hover {
-
   transform:
     translateY(-5px)
     scale(1.05);
+}
 
+.surprise-button:active {
+  transform: scale(0.95);
 }
 
 @keyframes buttonPulse {
-
-  0%,100% {
+  0%,
+  100% {
     box-shadow:
-      0 10px 25px rgba(200,50,90,.3);
+      0 10px 25px rgba(200, 50, 90, 0.3);
   }
 
   50% {
     box-shadow:
-      0 10px 40px rgba(230,70,110,.5);
+      0 10px 40px rgba(230, 70, 110, 0.5);
   }
-
 }
-
 
 /* =====================================================
    SURPRISE
 ===================================================== */
 
 .surprise {
-
   max-height: 0;
 
   opacity: 0;
@@ -1051,13 +978,12 @@ h1 span {
   margin-top: 0;
 
   transition:
-    .8s ease;
-
-  position: relative;
+    max-height 0.8s ease,
+    opacity 0.8s ease,
+    margin-top 0.5s ease;
 }
 
 .surprise.visible {
-
   max-height: 500px;
 
   opacity: 1;
@@ -1074,19 +1000,18 @@ h1 span {
       #fff0f5,
       #fff8e3
     );
-}
 
+  position: relative;
+}
 
 /* =====================================================
    GIFT
 ===================================================== */
 
 .gift {
-
   position: relative;
 
   width: 100px;
-
   height: 100px;
 
   margin: auto;
@@ -1096,12 +1021,10 @@ h1 span {
 }
 
 .gift-box {
-
   font-size: 75px;
 }
 
 .gift-lid {
-
   position: absolute;
 
   top: -10px;
@@ -1117,45 +1040,43 @@ h1 span {
 }
 
 @keyframes giftBounce {
-
-  0%,100% {
+  0%,
+  100% {
     transform: translateY(0);
   }
 
   50% {
     transform: translateY(-12px);
   }
-
 }
 
 @keyframes lidOpen {
-
-  0%,100% {
+  0%,
+  100% {
     transform: rotate(0);
   }
 
   50% {
-    transform: rotate(-15deg)
-               translateY(-8px);
+    transform:
+      rotate(-15deg)
+      translateY(-8px);
   }
-
 }
 
 .surprise h2 {
-
   font-family:
-    'Dancing Script',
-    cursive;
+    "Trebuchet MS",
+    Arial,
+    sans-serif;
 
   color: #d53d69;
 
-  font-size: 35px;
+  font-size: 32px;
 
   margin-top: 10px;
 }
 
 .surprise p {
-
   margin-top: 8px;
 
   color: #666;
@@ -1166,25 +1087,25 @@ h1 span {
 }
 
 .love-text {
-
   margin-top: 10px;
 
   color: #d8436c;
 
   font-family:
-    'Dancing Script',
-    cursive;
+    "Trebuchet MS",
+    Arial,
+    sans-serif;
 
-  font-size: 25px;
+  font-size: 24px;
+
+  font-weight: 600;
 }
-
 
 /* =====================================================
    CONFETTI
 ===================================================== */
 
 .confetti {
-
   position: absolute;
 
   font-size: 25px;
@@ -1201,25 +1122,25 @@ h1 span {
 .c2 {
   left: 25%;
   top: 10px;
-  animation-delay: .2s;
+  animation-delay: 0.2s;
 }
 
 .c3 {
   right: 25%;
   top: 5px;
-  animation-delay: .4s;
+  animation-delay: 0.4s;
 }
 
 .c4 {
   right: 10%;
   top: 15px;
-  animation-delay: .6s;
+  animation-delay: 0.6s;
 }
 
 .c5 {
   left: 45%;
   top: 0;
-  animation-delay: .8s;
+  animation-delay: 0.8s;
 }
 
 .c6 {
@@ -1229,7 +1150,6 @@ h1 span {
 }
 
 @keyframes confettiFall {
-
   0% {
     transform:
       translateY(0)
@@ -1249,16 +1169,13 @@ h1 span {
 
     opacity: 0;
   }
-
 }
-
 
 /* =====================================================
    FOOTER
 ===================================================== */
 
 .footer {
-
   margin-top: 30px;
 
   display: flex;
@@ -1274,7 +1191,6 @@ h1 span {
 
 .footer span:first-child,
 .footer span:last-child {
-
   font-size: 20px;
 
   animation:
@@ -1282,7 +1198,6 @@ h1 span {
 }
 
 @keyframes diyaGlow {
-
   from {
     transform: scale(1);
   }
@@ -1290,17 +1205,14 @@ h1 span {
   to {
     transform: scale(1.2);
   }
-
 }
 
-
 /* =====================================================
-   FLOATING BACKGROUND
+   FLOATING FLOWERS
 ===================================================== */
 
 .floating,
 .sparkle {
-
   position: absolute;
 
   pointer-events: none;
@@ -1309,7 +1221,6 @@ h1 span {
 }
 
 .flower {
-
   font-size: 30px;
 
   animation:
@@ -1324,24 +1235,27 @@ h1 span {
 .f2 {
   right: 8%;
   top: 25%;
+
   animation-delay: 2s;
 }
 
 .f3 {
   left: 15%;
   bottom: 15%;
+
   animation-delay: 4s;
 }
 
 .f4 {
   right: 18%;
   bottom: 12%;
+
   animation-delay: 1s;
 }
 
 @keyframes flowerFloat {
-
-  0%,100% {
+  0%,
+  100% {
     transform:
       translateY(0)
       rotate(0);
@@ -1352,14 +1266,13 @@ h1 span {
       translateY(-40px)
       rotate(25deg);
   }
-
 }
 
-
-/* Hearts */
+/* =====================================================
+   FLOATING HEARTS
+===================================================== */
 
 .heart {
-
   font-size: 25px;
 
   animation:
@@ -1374,29 +1287,32 @@ h1 span {
 .h2 {
   right: 5%;
   top: 20%;
+
   animation-delay: 2s;
 }
 
 .h3 {
   right: 15%;
   bottom: 25%;
+
   animation-delay: 3s;
 }
 
 .h4 {
   left: 18%;
   top: 10%;
+
   animation-delay: 4s;
 }
 
 @keyframes heartFloat {
-
-  0%,100% {
+  0%,
+  100% {
     transform:
       translateY(20px)
-      scale(.8);
+      scale(0.8);
 
-    opacity: .4;
+    opacity: 0.4;
   }
 
   50% {
@@ -1406,16 +1322,13 @@ h1 span {
 
     opacity: 1;
   }
-
 }
-
 
 /* =====================================================
    SPARKLES
 ===================================================== */
 
 .sparkle {
-
   font-size: 25px;
 
   animation:
@@ -1430,29 +1343,32 @@ h1 span {
 .s2 {
   top: 25%;
   right: 15%;
-  animation-delay: .5s;
+
+  animation-delay: 0.5s;
 }
 
 .s3 {
   bottom: 20%;
   left: 25%;
+
   animation-delay: 1s;
 }
 
 .s4 {
   bottom: 30%;
   right: 25%;
+
   animation-delay: 1.5s;
 }
 
 @keyframes sparkle {
-
-  0%,100% {
+  0%,
+  100% {
     transform:
-      scale(.5)
+      scale(0.5)
       rotate(0);
 
-    opacity: .3;
+    opacity: 0.3;
   }
 
   50% {
@@ -1462,16 +1378,13 @@ h1 span {
 
     opacity: 1;
   }
-
 }
 
-
 /* =====================================================
-   DIYA
+   DIYAS
 ===================================================== */
 
 .diya {
-
   position: fixed;
 
   bottom: 25px;
@@ -1491,11 +1404,10 @@ h1 span {
 .diya-right {
   right: 5%;
 
-  animation-delay: .8s;
+  animation-delay: 0.8s;
 }
 
 @keyframes diyaFloat {
-
   from {
     transform: translateY(0);
   }
@@ -1503,15 +1415,13 @@ h1 span {
   to {
     transform: translateY(-15px);
   }
-
 }
-
 
 /* =====================================================
    MOBILE
 ===================================================== */
 
-@media(max-width: 700px) {
+@media (max-width: 700px) {
 
   .page {
     padding: 20px 10px;
@@ -1519,6 +1429,7 @@ h1 span {
 
   .card {
     padding: 30px 15px;
+
     border-radius: 30px;
   }
 
@@ -1527,8 +1438,7 @@ h1 span {
   }
 
   .characters {
-
-    transform: scale(.75);
+    transform: scale(0.75);
 
     transform-origin:
       center bottom;
@@ -1539,11 +1449,9 @@ h1 span {
   }
 
   .message-box {
-
     margin-top: -30px;
 
-    padding:
-      20px 30px;
+    padding: 20px 30px;
   }
 
   .diya {
@@ -1553,14 +1461,12 @@ h1 span {
   .floating {
     font-size: 20px;
   }
-
 }
 
-@media(max-width: 450px) {
+@media (max-width: 450px) {
 
   .characters {
-
-    transform: scale(.62);
+    transform: scale(0.62);
 
     height: 280px;
 
@@ -1576,4 +1482,11 @@ h1 span {
     font-size: 12px;
   }
 
+  .message-box p {
+    font-size: 12px;
+  }
+
+  .surprise h2 {
+    font-size: 25px;
+  }
 }
