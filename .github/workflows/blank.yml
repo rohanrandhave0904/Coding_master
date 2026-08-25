@@ -30,13 +30,18 @@ jobs:
       - name: Build Angular
         run: npm run build -- --base-href "/Coding_master/"
 
+      - name: Verify build output
+        run: |
+          echo "===== DIST ====="
+          find dist -maxdepth 4 -type f | head -100
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4
         with:
-          path: ./dist
+          path: ./dist/Coding_master/browser
 
   deploy:
     needs: build
