@@ -1,0 +1,1579 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+}
+
+
+/* =====================================================
+   MAIN PAGE
+===================================================== */
+
+.page {
+  min-height: 100vh;
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 50px 20px;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      #ffd4e5,
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at 85% 75%,
+      #ffe5b8,
+      transparent 25%
+    ),
+    linear-gradient(
+      135deg,
+      #fff5f8,
+      #fff0dc
+    );
+}
+
+
+/* =====================================================
+   CARD
+===================================================== */
+
+.card {
+  width: 100%;
+  max-width: 850px;
+
+  position: relative;
+  z-index: 10;
+
+  padding: 45px 40px 30px;
+
+  text-align: center;
+
+  border-radius: 40px;
+
+  background: rgba(255,255,255,0.90);
+
+  border: 2px solid rgba(235,110,145,0.25);
+
+  box-shadow:
+    0 40px 100px rgba(180,70,110,0.18),
+    0 10px 30px rgba(0,0,0,0.08);
+
+  backdrop-filter: blur(15px);
+
+  animation: cardEntry 1s ease;
+}
+
+@keyframes cardEntry {
+
+  from {
+    opacity: 0;
+    transform: translateY(60px) scale(.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+}
+
+
+/* =====================================================
+   TITLE
+===================================================== */
+
+.top-flowers {
+  font-size: 28px;
+
+  letter-spacing: 12px;
+
+  animation:
+    flowerDance 3s infinite ease-in-out;
+}
+
+@keyframes flowerDance {
+
+  0%,100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+
+}
+
+.small-heading {
+  margin-top: 15px;
+
+  color: #bd5575;
+
+  font-size: 12px;
+
+  letter-spacing: 4px;
+
+  font-weight: 600;
+}
+
+h1 {
+  margin-top: 8px;
+
+  font-family: 'Dancing Script', cursive;
+
+  font-size: clamp(55px,8vw,90px);
+
+  line-height: .95;
+
+  color: #7d2948;
+}
+
+h1 span {
+  display: block;
+
+  color: #e44875;
+
+  animation: titleGlow 2s infinite;
+}
+
+@keyframes titleGlow {
+
+  0%,100% {
+    text-shadow:
+      0 0 0 rgba(230,70,110,0);
+  }
+
+  50% {
+    text-shadow:
+      0 0 25px rgba(230,70,110,.35);
+  }
+
+}
+
+.subtitle {
+  margin-top: 15px;
+
+  color: #777;
+
+  font-size: 14px;
+}
+
+
+/* =====================================================
+   CHARACTERS
+===================================================== */
+
+.characters {
+
+  height: 340px;
+
+  margin-top: 35px;
+
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: center;
+
+  gap: 45px;
+
+  position: relative;
+}
+
+
+/* Character */
+
+.character {
+
+  width: 160px;
+
+  height: 310px;
+
+  position: relative;
+
+  animation:
+    characterFloat 3s ease-in-out infinite;
+}
+
+.sister {
+  animation-delay: .5s;
+}
+
+@keyframes characterFloat {
+
+  0%,100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+}
+
+
+/* =====================================================
+   NAME TAG
+===================================================== */
+
+.name-tag {
+
+  position: absolute;
+
+  top: -10px;
+
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  white-space: nowrap;
+
+  padding: 6px 14px;
+
+  border-radius: 30px;
+
+  background: white;
+
+  color: #d34d70;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  box-shadow:
+    0 5px 15px rgba(0,0,0,.08);
+
+  z-index: 10;
+}
+
+
+/* =====================================================
+   HEAD
+===================================================== */
+
+.head {
+
+  width: 105px;
+  height: 105px;
+
+  position: absolute;
+
+  top: 35px;
+  left: 28px;
+
+  border-radius: 48%;
+
+  background:
+    #ffd1ae;
+
+  border: 3px solid #f2aa83;
+
+  z-index: 3;
+
+  box-shadow:
+    0 8px 15px rgba(120,60,30,.12);
+}
+
+
+/* =====================================================
+   BROTHER HAIR
+===================================================== */
+
+.hair {
+
+  position: absolute;
+
+  width: 105px;
+  height: 55px;
+
+  left: -3px;
+  top: -8px;
+
+  background: #38251e;
+
+  border-radius:
+    60% 60% 35% 35%;
+}
+
+
+/* Hair spikes */
+
+.hair::before,
+.hair::after {
+
+  content: '';
+
+  position: absolute;
+
+  width: 30px;
+  height: 30px;
+
+  background: #38251e;
+
+  top: 0;
+
+  transform: rotate(35deg);
+}
+
+.hair::before {
+  left: 10px;
+}
+
+.hair::after {
+  right: 10px;
+}
+
+
+/* =====================================================
+   SISTER HAIR
+===================================================== */
+
+.sister-hair {
+
+  position: absolute;
+
+  width: 125px;
+  height: 135px;
+
+  left: -13px;
+  top: -20px;
+
+  background: #39241f;
+
+  border-radius:
+    50% 50% 45% 45%;
+
+  z-index: -1;
+}
+
+.sister-hair::after {
+
+  content: '';
+
+  position: absolute;
+
+  width: 25px;
+  height: 90px;
+
+  right: -10px;
+  top: 45px;
+
+  background: #39241f;
+
+  border-radius: 50%;
+}
+
+
+/* =====================================================
+   EARS
+===================================================== */
+
+.ear {
+
+  width: 17px;
+  height: 25px;
+
+  position: absolute;
+
+  top: 38px;
+
+  background: #ffc49f;
+
+  border: 2px solid #f2aa83;
+
+  border-radius: 50%;
+}
+
+.left-ear {
+  left: -13px;
+}
+
+.right-ear {
+  right: -13px;
+}
+
+
+/* =====================================================
+   EYES
+===================================================== */
+
+.eye {
+
+  width: 12px;
+  height: 16px;
+
+  position: absolute;
+
+  top: 48px;
+
+  background: #38241f;
+
+  border-radius: 50%;
+
+  animation:
+    blink 4s infinite;
+}
+
+.left-eye {
+  left: 28px;
+}
+
+.right-eye {
+  right: 28px;
+}
+
+@keyframes blink {
+
+  0%,45%,50%,100% {
+    transform: scaleY(1);
+  }
+
+  47% {
+    transform: scaleY(.1);
+  }
+
+}
+
+
+/* =====================================================
+   NOSE
+===================================================== */
+
+.nose {
+
+  width: 8px;
+  height: 8px;
+
+  position: absolute;
+
+  left: 49px;
+  top: 65px;
+
+  border-right: 2px solid #d98c68;
+
+  transform: rotate(30deg);
+}
+
+
+/* =====================================================
+   SMILE
+===================================================== */
+
+.smile {
+
+  width: 30px;
+  height: 15px;
+
+  position: absolute;
+
+  left: 36px;
+  top: 75px;
+
+  border-bottom: 3px solid #b44c58;
+
+  border-radius: 50%;
+}
+
+
+/* =====================================================
+   CHEEKS
+===================================================== */
+
+.cheek {
+
+  width: 13px;
+  height: 8px;
+
+  position: absolute;
+
+  top: 70px;
+
+  background: rgba(245,100,120,.3);
+
+  border-radius: 50%;
+}
+
+.left-cheek {
+  left: 13px;
+}
+
+.right-cheek {
+  right: 13px;
+}
+
+
+/* =====================================================
+   BODY
+===================================================== */
+
+.body {
+
+  position: absolute;
+
+  top: 135px;
+
+  left: 35px;
+
+  width: 90px;
+  height: 115px;
+
+  border-radius:
+    35px 35px 15px 15px;
+
+  z-index: 2;
+}
+
+
+/* Brother shirt */
+
+.brother-body {
+
+  background:
+    linear-gradient(
+      135deg,
+      #4b9be8,
+      #2468bd
+    );
+
+}
+
+
+/* Sister dress */
+
+.sister-body {
+
+  width: 110px;
+
+  left: 25px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ed6f9a,
+      #c6386c
+    );
+
+  border-radius:
+    40px 40px 20px 20px;
+}
+
+
+/* =====================================================
+   SHIRT / DRESS
+===================================================== */
+
+.shirt {
+
+  padding-top: 30px;
+
+  font-size: 22px;
+}
+
+.dress {
+
+  padding-top: 30px;
+
+  font-size: 25px;
+}
+
+
+/* =====================================================
+   ARMS
+===================================================== */
+
+.arm {
+
+  width: 22px;
+  height: 85px;
+
+  position: absolute;
+
+  top: 12px;
+
+  background: #ffd1ae;
+
+  border-radius: 20px;
+
+  transform-origin: top center;
+
+  transition: .5s;
+}
+
+
+/* Brother */
+
+.brother-arm-left {
+  left: -18px;
+  transform: rotate(15deg);
+}
+
+.brother-arm-right {
+  right: -18px;
+  transform: rotate(-15deg);
+}
+
+
+/* Sister */
+
+.sister-arm-left {
+  left: -18px;
+  transform: rotate(15deg);
+}
+
+.sister-arm-right {
+  right: -18px;
+  transform: rotate(-15deg);
+}
+
+
+/* =====================================================
+   LEGS
+===================================================== */
+
+.legs {
+
+  position: absolute;
+
+  bottom: 0;
+
+  left: 42px;
+
+  display: flex;
+
+  gap: 18px;
+}
+
+.leg {
+
+  width: 25px;
+  height: 65px;
+
+  background: #ffd1ae;
+
+  border-radius: 20px;
+}
+
+
+/* =====================================================
+   RAKHI
+===================================================== */
+
+.rakhi-zone {
+
+  width: 150px;
+  height: 180px;
+
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+.rakhi {
+
+  width: 90px;
+  height: 90px;
+
+  position: relative;
+
+  z-index: 5;
+
+  animation:
+    rakhiSpin 4s linear infinite;
+}
+
+.rakhi-ring {
+
+  width: 90px;
+  height: 90px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background:
+    conic-gradient(
+      #ffd45a,
+      #e84978,
+      #ffbd35,
+      #d93868,
+      #ffd45a
+    );
+
+  box-shadow:
+    0 10px 25px rgba(210,60,100,.35);
+}
+
+.rakhi-center {
+
+  width: 50px;
+  height: 50px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #fff3a9;
+
+  border: 5px solid white;
+
+  font-size: 25px;
+}
+
+@keyframes rakhiSpin {
+
+  0%,80% {
+    transform: rotate(0);
+  }
+
+  90% {
+    transform: rotate(15deg);
+  }
+
+  100% {
+    transform: rotate(0);
+  }
+
+}
+
+
+/* Rakhi dots */
+
+.rakhi-dot {
+
+  width: 12px;
+  height: 12px;
+
+  position: absolute;
+
+  background: #ffc93d;
+
+  border-radius: 50%;
+}
+
+.dot1 {
+  top: -5px;
+  left: 40px;
+}
+
+.dot2 {
+  bottom: -5px;
+  left: 40px;
+}
+
+.dot3 {
+  left: -5px;
+  top: 40px;
+}
+
+.dot4 {
+  right: -5px;
+  top: 40px;
+}
+
+
+/* =====================================================
+   THREAD
+===================================================== */
+
+.thread-animation {
+
+  position: absolute;
+
+  width: 160px;
+
+  height: 7px;
+
+  background:
+    repeating-linear-gradient(
+      45deg,
+      #e34f76 0 10px,
+      #f4b52c 10px 20px
+    );
+
+  border-radius: 20px;
+
+  animation:
+    threadMove 2s infinite ease-in-out;
+}
+
+@keyframes threadMove {
+
+  0%,100% {
+    transform: scaleX(.85);
+  }
+
+  50% {
+    transform: scaleX(1.15);
+  }
+
+}
+
+
+/* =====================================================
+   TINY HEART
+===================================================== */
+
+.tiny-heart {
+
+  position: absolute;
+
+  top: 10px;
+
+  font-size: 20px;
+
+  animation:
+    tinyHeart 1.5s infinite;
+}
+
+@keyframes tinyHeart {
+
+  0%,100% {
+    transform: translateY(0) scale(1);
+  }
+
+  50% {
+    transform: translateY(-12px) scale(1.3);
+  }
+
+}
+
+
+/* =====================================================
+   HUG ANIMATION
+===================================================== */
+
+.characters.hug .brother-arm-right {
+
+  transform:
+    rotate(-65deg)
+    translateY(5px);
+}
+
+.characters.hug .sister-arm-left {
+
+  transform:
+    rotate(65deg)
+    translateY(5px);
+}
+
+.characters.hug .brother {
+
+  transform:
+    translateX(25px)
+    translateY(-5px);
+}
+
+.characters.hug .sister {
+
+  transform:
+    translateX(-25px)
+    translateY(-5px);
+}
+
+.characters.hug .rakhi-zone {
+
+  animation:
+    disappearRakhi 1s forwards;
+}
+
+@keyframes disappearRakhi {
+
+  to {
+    opacity: .3;
+    transform: scale(.5);
+  }
+
+}
+
+
+/* =====================================================
+   MESSAGE
+===================================================== */
+
+.message-box {
+
+  max-width: 620px;
+
+  margin: 15px auto 0;
+
+  padding: 20px 40px;
+
+  position: relative;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fff1f6,
+      #fff8e9
+    );
+
+  border-radius: 25px;
+
+  border: 1px solid #ffd5df;
+}
+
+.message-box p {
+
+  color: #666;
+
+  line-height: 1.8;
+
+  font-size: 14px;
+}
+
+.quote {
+
+  position: absolute;
+
+  top: 0;
+  left: 15px;
+
+  font-family:
+    Georgia,
+    serif;
+
+  font-size: 55px;
+
+  color: #e76486;
+}
+
+.quote.end {
+
+  left: auto;
+
+  right: 15px;
+
+  top: auto;
+
+  bottom: -25px;
+}
+
+
+/* =====================================================
+   BUTTON
+===================================================== */
+
+.surprise-button {
+
+  margin-top: 25px;
+
+  padding: 16px 30px;
+
+  border: none;
+
+  border-radius: 50px;
+
+  color: white;
+
+  background:
+    linear-gradient(
+      135deg,
+      #e84f78,
+      #c52e5e
+    );
+
+  font-family: 'Poppins';
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 10px 25px rgba(200,50,90,.3);
+
+  transition: .3s;
+
+  animation:
+    buttonPulse 2s infinite;
+}
+
+.surprise-button:hover {
+
+  transform:
+    translateY(-5px)
+    scale(1.05);
+
+}
+
+@keyframes buttonPulse {
+
+  0%,100% {
+    box-shadow:
+      0 10px 25px rgba(200,50,90,.3);
+  }
+
+  50% {
+    box-shadow:
+      0 10px 40px rgba(230,70,110,.5);
+  }
+
+}
+
+
+/* =====================================================
+   SURPRISE
+===================================================== */
+
+.surprise {
+
+  max-height: 0;
+
+  opacity: 0;
+
+  overflow: hidden;
+
+  margin-top: 0;
+
+  transition:
+    .8s ease;
+
+  position: relative;
+}
+
+.surprise.visible {
+
+  max-height: 500px;
+
+  opacity: 1;
+
+  margin-top: 30px;
+
+  padding: 30px;
+
+  border-radius: 30px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fff0f5,
+      #fff8e3
+    );
+}
+
+
+/* =====================================================
+   GIFT
+===================================================== */
+
+.gift {
+
+  position: relative;
+
+  width: 100px;
+
+  height: 100px;
+
+  margin: auto;
+
+  animation:
+    giftBounce 1.5s infinite;
+}
+
+.gift-box {
+
+  font-size: 75px;
+}
+
+.gift-lid {
+
+  position: absolute;
+
+  top: -10px;
+
+  width: 100%;
+
+  font-size: 35px;
+
+  z-index: 2;
+
+  animation:
+    lidOpen 1.5s infinite;
+}
+
+@keyframes giftBounce {
+
+  0%,100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+
+}
+
+@keyframes lidOpen {
+
+  0%,100% {
+    transform: rotate(0);
+  }
+
+  50% {
+    transform: rotate(-15deg)
+               translateY(-8px);
+  }
+
+}
+
+.surprise h2 {
+
+  font-family:
+    'Dancing Script',
+    cursive;
+
+  color: #d53d69;
+
+  font-size: 35px;
+
+  margin-top: 10px;
+}
+
+.surprise p {
+
+  margin-top: 8px;
+
+  color: #666;
+
+  font-size: 13px;
+
+  line-height: 1.7;
+}
+
+.love-text {
+
+  margin-top: 10px;
+
+  color: #d8436c;
+
+  font-family:
+    'Dancing Script',
+    cursive;
+
+  font-size: 25px;
+}
+
+
+/* =====================================================
+   CONFETTI
+===================================================== */
+
+.confetti {
+
+  position: absolute;
+
+  font-size: 25px;
+
+  animation:
+    confettiFall 2s infinite;
+}
+
+.c1 {
+  left: 10%;
+  top: 0;
+}
+
+.c2 {
+  left: 25%;
+  top: 10px;
+  animation-delay: .2s;
+}
+
+.c3 {
+  right: 25%;
+  top: 5px;
+  animation-delay: .4s;
+}
+
+.c4 {
+  right: 10%;
+  top: 15px;
+  animation-delay: .6s;
+}
+
+.c5 {
+  left: 45%;
+  top: 0;
+  animation-delay: .8s;
+}
+
+.c6 {
+  right: 45%;
+  top: 10px;
+  animation-delay: 1s;
+}
+
+@keyframes confettiFall {
+
+  0% {
+    transform:
+      translateY(0)
+      rotate(0);
+
+    opacity: 0;
+  }
+
+  30% {
+    opacity: 1;
+  }
+
+  100% {
+    transform:
+      translateY(130px)
+      rotate(360deg);
+
+    opacity: 0;
+  }
+
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.footer {
+
+  margin-top: 30px;
+
+  display: flex;
+
+  justify-content: center;
+
+  gap: 15px;
+
+  color: #999;
+
+  font-size: 11px;
+}
+
+.footer span:first-child,
+.footer span:last-child {
+
+  font-size: 20px;
+
+  animation:
+    diyaGlow 1.5s infinite alternate;
+}
+
+@keyframes diyaGlow {
+
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.2);
+  }
+
+}
+
+
+/* =====================================================
+   FLOATING BACKGROUND
+===================================================== */
+
+.floating,
+.sparkle {
+
+  position: absolute;
+
+  pointer-events: none;
+
+  z-index: 2;
+}
+
+.flower {
+
+  font-size: 30px;
+
+  animation:
+    flowerFloat 7s infinite ease-in-out;
+}
+
+.f1 {
+  left: 8%;
+  top: 15%;
+}
+
+.f2 {
+  right: 8%;
+  top: 25%;
+  animation-delay: 2s;
+}
+
+.f3 {
+  left: 15%;
+  bottom: 15%;
+  animation-delay: 4s;
+}
+
+.f4 {
+  right: 18%;
+  bottom: 12%;
+  animation-delay: 1s;
+}
+
+@keyframes flowerFloat {
+
+  0%,100% {
+    transform:
+      translateY(0)
+      rotate(0);
+  }
+
+  50% {
+    transform:
+      translateY(-40px)
+      rotate(25deg);
+  }
+
+}
+
+
+/* Hearts */
+
+.heart {
+
+  font-size: 25px;
+
+  animation:
+    heartFloat 6s infinite ease-in-out;
+}
+
+.h1 {
+  left: 5%;
+  bottom: 30%;
+}
+
+.h2 {
+  right: 5%;
+  top: 20%;
+  animation-delay: 2s;
+}
+
+.h3 {
+  right: 15%;
+  bottom: 25%;
+  animation-delay: 3s;
+}
+
+.h4 {
+  left: 18%;
+  top: 10%;
+  animation-delay: 4s;
+}
+
+@keyframes heartFloat {
+
+  0%,100% {
+    transform:
+      translateY(20px)
+      scale(.8);
+
+    opacity: .4;
+  }
+
+  50% {
+    transform:
+      translateY(-40px)
+      scale(1.3);
+
+    opacity: 1;
+  }
+
+}
+
+
+/* =====================================================
+   SPARKLES
+===================================================== */
+
+.sparkle {
+
+  font-size: 25px;
+
+  animation:
+    sparkle 2s infinite;
+}
+
+.s1 {
+  top: 10%;
+  left: 30%;
+}
+
+.s2 {
+  top: 25%;
+  right: 15%;
+  animation-delay: .5s;
+}
+
+.s3 {
+  bottom: 20%;
+  left: 25%;
+  animation-delay: 1s;
+}
+
+.s4 {
+  bottom: 30%;
+  right: 25%;
+  animation-delay: 1.5s;
+}
+
+@keyframes sparkle {
+
+  0%,100% {
+    transform:
+      scale(.5)
+      rotate(0);
+
+    opacity: .3;
+  }
+
+  50% {
+    transform:
+      scale(1.4)
+      rotate(180deg);
+
+    opacity: 1;
+  }
+
+}
+
+
+/* =====================================================
+   DIYA
+===================================================== */
+
+.diya {
+
+  position: fixed;
+
+  bottom: 25px;
+
+  font-size: 50px;
+
+  z-index: 3;
+
+  animation:
+    diyaFloat 2s infinite alternate;
+}
+
+.diya-left {
+  left: 5%;
+}
+
+.diya-right {
+  right: 5%;
+
+  animation-delay: .8s;
+}
+
+@keyframes diyaFloat {
+
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-15px);
+  }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width: 700px) {
+
+  .page {
+    padding: 20px 10px;
+  }
+
+  .card {
+    padding: 30px 15px;
+    border-radius: 30px;
+  }
+
+  h1 {
+    font-size: 55px;
+  }
+
+  .characters {
+
+    transform: scale(.75);
+
+    transform-origin:
+      center bottom;
+
+    margin-top: 10px;
+
+    gap: 10px;
+  }
+
+  .message-box {
+
+    margin-top: -30px;
+
+    padding:
+      20px 30px;
+  }
+
+  .diya {
+    display: none;
+  }
+
+  .floating {
+    font-size: 20px;
+  }
+
+}
+
+@media(max-width: 450px) {
+
+  .characters {
+
+    transform: scale(.62);
+
+    height: 280px;
+
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+
+  h1 {
+    font-size: 48px;
+  }
+
+  .subtitle {
+    font-size: 12px;
+  }
+
+}
